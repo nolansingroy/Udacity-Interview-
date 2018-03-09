@@ -38,7 +38,8 @@ the input was a list, not null, and is of type string!
 
 4. List 2-3 attacks that web applications are vulnerable to. How do these
 attacks work? How can we prevent those attacks?
-
+xrf attacks cross site request forgery, sql injections attacks, and LFI local file inclusion. Use bleach for sql, for lfi avoid dynamically including file, 
+for xrf simply use a csrf  token or a synchronizer token.
 
 5.Here is some starter code for a Flask Web Application. Expand on that and
 include a route that simulates rolling two dice and returns the result in JSON.
