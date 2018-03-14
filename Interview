@@ -1,18 +1,18 @@
 1. what is the most influential book or blog you have ever read regarding web development?
-A. The most influential book, would have to be john resign javascript ninja
-a complete concise quide to prototype javascript. These book impacted me when I was learning javascript to build my google play store game "Bruiser's Equinox Adventure, by allowing me to concieve the abastration in more detail since the game engine I used at the time cocos2d had only mandrin documentation on their engine and how to build games.
+A. The most influential book that I currently own, would have to be john resign javascript ninja
+a complete concise quide to prototype javascript. This book impacted me when I was learning javascript to build my google play store game "Bruiser's Spring Adventure, by allowing me to concieve the abstration in more detail, since the game engine I used at the time, cocos2d had only mandrin api documentation.
 
 2. Tell me about a web application you have built. Why did you choose to build
 it? What did you learn? What challenges did you face and how did you overcome them?
 
-A.  A web application that I made for the udacity nano degree course is road map to health.
-At first this app was just a requirement for my nano degree course, but then it become much more!
-being a person of health myself, the main purpose of the application is an open source
+A.  A web application made for the udacity nano degree course is road map to health.
+At first this app was just a requirement for my nano degree course, but then it become much more to me,
+being a person who is interested in health knowledge. The main purpose of the application is an open source
 database of medicine knowledge which allows an authenticated user to create
 organ systems of the human body then populate that organ system with a medicine
 product that pertains to aiding that system with the options of categorizing by glands and different
-types of recognized medicine as well. I needed to learn the flask frame work and sql
-to complete this project. At first getting my database to by the app was difficult
+types of recognized medicines. I needed to learn the flask framework, sql, and python
+to complete this project. At first getting my database to be recognized by the app was difficult.
 I quickly overcame this barrier by reading the documentation again.
  
 
@@ -38,8 +38,28 @@ the input was a list, not null, and is of type string!
 
 4. List 2-3 attacks that web applications are vulnerable to. How do these
 attacks work? How can we prevent those attacks?
-xrf attacks cross site request forgery, sql injections attacks, and LFI local file inclusion. Use bleach for sql, for lfi avoid dynamically including file, 
+xrf attacks cross site request forgery, sql injections attacks, and DDOS Attacks local file inclusion. Use bleach for sql, for lfi avoid dynamically including file, 
 for xrf simply use a csrf  token or a synchronizer token.
+
+4.1 Sql Injection attacks are when an atacker injects sql code into input fields on a web page. This would allow the attack to do damage such as 
+spoof an identity and or tamper with existing data. One way to protect angainst sql injection attacks would be to remember to never trust the user input
+and use third party security code like bleach within your code to sanatize any input form the user.
+
+4.2 Local File Inclusion attacks are when an attacker expolits a dynamic file inclusion by including a file or ../ to the websites un proper validation of user input.
+   Typically the webpage being attack would receive a as input the path to the file that has to be included. This would allow for directory transversal further giving the attacker the ability to enter "../". To protect against this type of vulnerability the web application should avoid passing user submitted input to any filesystem and framework api , or at least contain a white list of files to be included by the page and then used as an identifier to be accessed to the selected file, thus allowing any invalid idnetifier to be rejected.
+
+4.3   Cross-Site request Forgery(CSRF) attacks tricks the victim into submitting a malicious request. 
+   The attacker would then embed this attack into a hyperlink and use either 
+social engineering (sending it through email or chat to the victim directly) 
+or if the site has a database they may store the bad request directly on the 
+site. A victim would now just need to click on the link which opens the web 
+page that their credentials are already stored, thus giving the attacker 
+full access to the victims data on that web application. One common way to prevent
+ this attack from occuring on your web application would be to simply rely on 
+header values by determining that the origin request is comming from original 
+source and going to the original target. A reccommended second defense practice is to 
+utilize synchronizer tokens, which are a secure random token unique to the user's session.
+ 
 
 5.Here is some starter code for a Flask Web Application. Expand on that and
 include a route that simulates rolling two dice and returns the result in JSON.
@@ -77,8 +97,7 @@ your goals a year from now?
 If I were to start the position today, my goals that I would achieve in one year are
 to enhance my skills by learning new object oriented, object relational mapper, and frameworks. 
 I would acheive this goal simply, by continuing my learning experience at udacity completing an react.js
-, web application specialist, and an android java nano-degree. Currenly enrolled in the google web challenge course giving me a head start to the completion date of these goals and aspirations. My intent and goals of expanding my development skills are essentially just a milestone, that will not only allow me to be a more robust and effiecent programmer, 
+,web application specialist, and an android java nano-degree. Currenly enrolled in the google web challenge course giving me a head start to the completion date of these goals and aspirations. My intent and goals of expanding my development skills are essentially just a milestone, that will not only allow me to be a more robust and effiecent programmer, 
 but a better asset to the company inwhich I work for! In summary, giving a year of experience as a full-web developer, which ever company I am working for, I would contribute in the fullest, so that their mission statement is being fullfilled. 
-
 
   
