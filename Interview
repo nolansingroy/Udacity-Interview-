@@ -55,6 +55,18 @@ import random
 def hello_world():
  return 'Hello World!'
 
+@app.route('/roll_dice/<int:n>json')
+def roll(n):
+    rolls = []
+    for i in range(n):
+	# Comprehenion list of the two random dice rolls 
+	two_dice = random.randint(1,6) + random.randint(1,6)
+        #inserting the data into our array object rolls
+        rolls.append(two_dice) 
+	
+	# Formatted for a json style output 
+    return json.dumps(rolls) 
+
 if __name__ == '__main__':
  app.debug = True
  app.run()
@@ -66,7 +78,7 @@ If I were to start the position today, my goals that I would achieve in one year
 to enhance my skills by learning new object oriented, object relational mapper, and frameworks. 
 I would acheive this goal simply, by continuing my learning experience at udacity completing an react.js
 , web application specialist, and an android java nano-degree. Currenly enrolled in the google web challenge course giving me a head start to the completion date of these goals and aspirations. My intent and goals of expanding my development skills are essentially just a milestone, that will not only allow me to be a more robust and effiecent programmer, 
-but a better asset to the company inwhich I work for! In summary, giving a year of experience as a full-web developer, which ever company I ened up working for, I would contribute in the fullest, so that their mission statement is being fullfilled. 
+but a better asset to the company inwhich I work for! In summary, giving a year of experience as a full-web developer, which ever company I am working for, I would contribute in the fullest, so that their mission statement is being fullfilled. 
 
 
   
