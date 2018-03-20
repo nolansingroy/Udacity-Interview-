@@ -100,4 +100,76 @@ I would acheive this goal simply, by continuing my learning experience at udacit
 ,web application specialist, and an android java nano-degree. Currenly enrolled in the google web challenge course giving me a head start to the completion date of these goals and aspirations. My intent and goals of expanding my development skills are essentially just a milestone, that will not only allow me to be a more robust and effiecent programmer, 
 but a better asset to the company inwhich I work for! In summary, giving a year of experience as a full-web developer, which ever company I am working for, I would contribute in the fullest, so that their mission statement is being fullfilled. 
 
+############# For Question4 #############
+class Tree_Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.left = None
+    self.right = None
+
+def BST_seatch(r, n):
+    # search if n is in the tree
+    current_node = r
+    while current_node.left != None or current_node.right != None:
+
+        # go left if current node is greater than n
+        if current_node.data > n:
+            # make sure left node exist
+            if current_node.left != None:
+                current_node = current_node.left
+            else:
+                return False
+
+        # go right if current node is less than n
+        elif current_node.data < n:
+            # make sure right node exist
+            if current_node.right != None:
+                current_node = current_node.right
+            else:
+                return False
+
+        # current node is n, return True
+        else:
+            return True
+        
+    # check if n is in the lowest level
+    if current_node.data == n:
+        return True
+    else:
+        return False
+
+def question4(r, n1, n2):
+    # make sure r is a tree node
+    if type(r) != Tree_Node:
+        return "Error: r not Tree_Node!"
+
+    # make sure n1 and n2 are integers
+    if type(n1) != int:
+        return "Error: n1 not integer!"
+    if type(n2) != int:
+        return "Error: n2 not integer!"
+
+    # make sure n1 and n2 in the tree
+    if not BST_seatch(r, n1):
+        return "Error: n1 not in the tree!"
+    if not BST_seatch(r, n2):
+        return "Error: n2 not in the tree!"
+    
+    current_node = r
+    while current_node.left != None or current_node.right != None:
+        
+        # if both vales are less than the current node, we go to the left
+        if current_node.data > n1 and current_node.data > n2:
+            current_node = current_node.left
+
+        # if both vales are greater than the current node, we go to the right
+        elif current_node.data < n1 and current_node.data < n2:
+            current_node = current_node.right
+
+        # we find the answer, return it
+        else:
+            return current_node.data
+    
+    # n1 equal to n2 at the lowest level
+    return current_node.data
   
